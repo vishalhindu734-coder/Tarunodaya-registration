@@ -1,0 +1,8 @@
+{
+  "name": "Tarunodaya Registration",
+  "description": "Event registration and QR pass generator with organizer check-in for Tarunodaya, Ambala.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

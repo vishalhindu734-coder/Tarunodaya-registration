@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "Registration": {
+      "title": "Registration",
+      "description": "Attendee event pass registration for Tarunodaya 2026",
+      "type": "object",
+      "properties": {
+        "ticketId": { "type": "string", "description": "Unique ticket code YS2026-XXXXX" },
+        "name": { "type": "string", "description": "Full name of attendee" },
+        "dob": { "type": "string", "description": "Date of birth string" },
+        "village": { "type": "string", "description": "Basti/Village name" },
+        "subDivision": { "type": "string", "description": "Upnagar name" },
+        "phone": { "type": "string", "description": "Mobile phone number" },
+        "otherInfo": { "type": "string", "description": "Optional notes" },
+        "registeredAt": { "type": "string", "description": "ISO registration timestamp" },
+        "checkedIn": { "type": "boolean", "description": "Check-in status" },
+        "checkedInAt": { "type": "string", "description": "ISO check-in timestamp" }
+      },
+      "required": ["ticketId", "name", "phone"]
+    }
+  },
+  "firestore": {
+    "/registrations/{ticketId}": {
+      "schema": "Registration",
+      "description": "Collection of attendee event registrations"
+    }
+  }
+}
