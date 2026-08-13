@@ -97,6 +97,9 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
   };
 
   const resetForm = () => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     setName('');
     setDob('');
     setVillageInput('');
@@ -120,6 +123,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
   }) => {
     setIsSubmitting(true);
     setExistingPassesWarning(null);
+
+    // Dismiss virtual keyboard on mobile devices
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
 
     try {
       // Save attendee registration details directly to cloud and local storage
@@ -148,8 +156,16 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
         // Clear form inputs so fresh registration starts completely clean
         resetForm();
 
+        // Ensure keyboard is closed
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+
         onSuccess(newReg);
       } else {
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
         setRegretState({
           name: data.name,
           age: calculatedAge,
@@ -165,6 +181,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    // Blur active input element on form submission
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
 
     const cleanName = name.trim();
     const cleanPhone = phone.trim();

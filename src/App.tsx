@@ -46,6 +46,9 @@ export default function App() {
   }, [currentRegistration]);
 
   const handleRegistrationSuccess = (reg: Registration) => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     setCurrentRegistration(reg);
     updateCounts();
     window.scrollTo({ top: 0, behavior: 'smooth' });
