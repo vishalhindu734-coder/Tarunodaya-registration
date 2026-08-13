@@ -57,13 +57,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-slate-200 selection:text-slate-900 flex flex-col antialiased">
       {/* Navbar */}
-      <div className="print-hide">
-        <Navbar
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          savedPassesCount={savedPassesCount}
-        />
-      </div>
+      <Navbar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        savedPassesCount={savedPassesCount}
+      />
 
       {/* Main Content Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-8 flex flex-col justify-center print:p-0 print:m-0">
