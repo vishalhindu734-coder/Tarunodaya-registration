@@ -60,7 +60,7 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
 export function cleanForFirestore<T extends Record<string, any>>(data: T): Record<string, any> {
   const result: Record<string, any> = {};
   Object.keys(data).forEach(key => {
-    if (data[key] !== undefined) {
+    if (data[key] !== undefined && key !== '_pendingSync') {
       result[key] = data[key];
     }
   });
@@ -73,15 +73,28 @@ let firestoreUnsubscribe: (() => void) | null = null;
 export async function syncLocalToCloud(): Promise<boolean> {
   try {
     const local = getRegistrations();
-    if (!local || local.length === 0) return true;
+    const pending = local.filter(r => r._pendingSync);
+    if (!pending || pending.length === 0) return true;
 
-    const promises = local.map(reg => {
+    const promises = pending.map(async reg => {
       const docRef = doc(db, FIRESTORE_COLLECTION, reg.ticketId);
       const cleanData = cleanForFirestore(reg);
-      return setDoc(docRef, cleanData, { merge: true });
+      await setDoc(docRef, cleanData, { merge: true });
     });
 
     await Promise.all(promises);
+
+    // Remove _pendingSync flag from synced registrations in local storage
+    const updatedLocal = getRegistrations().map(r => {
+      if (pending.some(p => p.ticketId === r.ticketId)) {
+        const copy = { ...r };
+        delete copy._pendingSync;
+        return copy;
+      }
+      return r;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedLocal));
+
     return true;
   } catch (err) {
     handleFirestoreError(err, OperationType.WRITE, FIRESTORE_COLLECTION);
@@ -95,7 +108,7 @@ export function initFirestoreSync() {
   try {
     const colRef = collection(db, FIRESTORE_COLLECTION);
     
-    // Sync any local offline data to cloud first
+    // Sync any pending offline registrations to cloud first
     syncLocalToCloud().catch(err => console.warn('Initial cloud sync warning:', err));
 
     firestoreUnsubscribe = onSnapshot(colRef, (snapshot) => {
@@ -103,26 +116,39 @@ export function initFirestoreSync() {
       snapshot.forEach((docSnap) => {
         const data = docSnap.data() as Registration;
         if (data && data.ticketId && !DEMO_TICKET_IDS.has(data.ticketId)) {
+          delete data._pendingSync;
           remoteRegistrations.push(data);
         }
       });
 
-      if (remoteRegistrations.length > 0) {
-        // Merge with local storage to ensure no loss
-        const local = getRegistrations();
-        const map = new Map<string, Registration>();
+      // Preserve only local registrations that were created offline and are still pending sync
+      const local = getRegistrations();
+      const pendingOffline = local.filter(r => r._pendingSync);
 
-        local.forEach(r => map.set(r.ticketId, r));
-        remoteRegistrations.forEach(r => map.set(r.ticketId, r));
+      const map = new Map<string, Registration>();
+      remoteRegistrations.forEach(r => map.set(r.ticketId, r));
+      pendingOffline.forEach(r => {
+        if (!map.has(r.ticketId)) {
+          map.set(r.ticketId, r);
+        }
+      });
 
-        const merged = Array.from(map.values()).sort((a, b) => {
-          return new Date(b.registeredAt || 0).getTime() - new Date(a.registeredAt || 0).getTime();
-        });
+      const merged = Array.from(map.values()).sort((a, b) => {
+        return new Date(b.registeredAt || 0).getTime() - new Date(a.registeredAt || 0).getTime();
+      });
 
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-        
-        window.dispatchEvent(new Event('yuva_sangam_registration_added'));
+      // Mirror cloud state into local storage (clears stale local cache if remote was wiped)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      
+      // Clean up MY_PASSES_KEY so deleted/wiped pass IDs are removed from device pass list
+      const validTicketIds = new Set(merged.map(r => r.ticketId));
+      const myPassIds = getMyPassIds();
+      const validMyPassIds = myPassIds.filter(id => validTicketIds.has(id));
+      if (validMyPassIds.length !== myPassIds.length) {
+        localStorage.setItem(MY_PASSES_KEY, JSON.stringify(validMyPassIds));
       }
+
+      window.dispatchEvent(new Event('yuva_sangam_registration_added'));
     }, (error) => {
       handleFirestoreError(error, OperationType.GET, FIRESTORE_COLLECTION);
     });
@@ -404,6 +430,7 @@ export async function saveRegistration(newReg: Omit<Registration, 'ticketId' | '
     otherInfo: newReg.otherInfo ? newReg.otherInfo.trim() : undefined,
     registeredAt: new Date().toISOString(),
     checkedIn: false,
+    _pendingSync: true,
   };
 
   const updated = [registration, ...registrations];
@@ -417,6 +444,15 @@ export async function saveRegistration(newReg: Omit<Registration, 'ticketId' | '
     const docRef = doc(db, FIRESTORE_COLLECTION, registration.ticketId);
     const cleanData = cleanForFirestore(registration);
     await setDoc(docRef, cleanData);
+    delete registration._pendingSync;
+
+    // Update local storage item to clear _pendingSync
+    const currentLocal = getRegistrations();
+    const idx = currentLocal.findIndex(r => r.ticketId === registration.ticketId);
+    if (idx !== -1) {
+      delete currentLocal[idx]._pendingSync;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentLocal));
+    }
     console.log('Saved registration directly to Firestore cloud:', registration.ticketId);
   } catch (err) {
     handleFirestoreError(err, OperationType.WRITE, `${FIRESTORE_COLLECTION}/${registration.ticketId}`);

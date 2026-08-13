@@ -8,8 +8,7 @@ const firebaseConfig = {
   projectId: "youthevent2",
   storageBucket: "youthevent2.firebasestorage.app",
   messagingSenderId: "370207001275",
-  appId: "1:370207001275:web:56deadb69de9b8f8dff79e",
-  measurementId: "G-Z2609VKFE1"
+  appId: "1:370207001275:web:dda0b882d4739f78dff79e"
 };
 
 // Initialize Firebase

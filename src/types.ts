@@ -9,6 +9,7 @@ export interface Registration {
   registeredAt: string; // ISO string
   checkedIn: boolean;
   checkedInAt?: string; // ISO string
+  _pendingSync?: boolean;
 }
 
 export interface EventInfo {
