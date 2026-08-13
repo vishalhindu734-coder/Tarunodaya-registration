@@ -289,13 +289,13 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
       <div className="relative z-10 flex items-center justify-between mb-3.5 pb-2.5 sm:pb-3.5 border-b border-indigo-100/80 gap-2">
         <div>
           <div className="flex items-center gap-1.5 mb-1">
-            <span className="text-[10px] font-rozha text-indigo-900 bg-indigo-100/90 border border-indigo-200 px-2.5 py-0.5 rounded-full tracking-wider">
+            <span className="text-[10px] font-tiro text-indigo-900 bg-indigo-100/90 border border-indigo-200 px-2.5 py-0.5 rounded-full tracking-wider">
               युवा शक्ति • राष्ट्र निर्माण
             </span>
           </div>
           <h2 className="text-base sm:text-xl font-black text-slate-900 tracking-tight flex items-center gap-2">
             <span>Tarunodaya Registration Form</span>
-            <span className="text-indigo-900 font-rozha text-sm sm:text-base font-normal">| तरुणोदय</span>
+            <span className="text-indigo-900 font-tiro text-sm sm:text-base font-normal">| तरुणोदय</span>
           </h2>
           <p className="text-[11px] text-slate-600 font-medium mt-0.5">
             Fill attendee details to generate your verified Tarunodaya 2026 pass. <span className="font-bold text-orange-700">(Invited: Male youth aged 15 to 40 years)</span>

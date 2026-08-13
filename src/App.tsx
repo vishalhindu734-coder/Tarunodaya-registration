@@ -108,7 +108,7 @@ export default function App() {
                     <span className="w-5 h-5 rounded-full bg-black text-white font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
                       4
                     </span>
-                    <span>Present your pass QR at Shri Atmanand Jain College, Ambala for instant verification.</span>
+                    <span>Present your pass QR at SA Jain College Auditorium, Ambala for instant verification.</span>
                   </li>
                 </ol>
 
@@ -214,7 +214,7 @@ export default function App() {
           </div>
 
           <div className="text-[11px] text-slate-400 uppercase tracking-widest font-bold">
-            Shri Atmanand Jain College, Ambala • August 30, 2026
+            SA Jain College Auditorium, Ambala • August 30, 2026
           </div>
         </div>
       </footer>

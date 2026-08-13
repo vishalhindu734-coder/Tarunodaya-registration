@@ -35,8 +35,8 @@ export async function shareWhatsAppWithPassImage(
     `• *Mobile:* ${registration.phone}\n` +
     (registration.village ? `• *Basti:* ${registration.village}\n` : '') +
     (registration.subDivision ? `• *Upnagar:* ${registration.subDivision}\n` : '') +
-    `\n📅 *Date & Time:* Sunday, 30 August 2026 at 3:00 PM - 6:00 PM\n` +
-    `📍 *Venue:* Shri Atmanand Jain College, Ambala\n\n` +
+    `\n📅 *Date & Time:* Sunday, 30 August 2026 at 3:00 PM - 6:30 PM\n` +
+    `📍 *Venue:* SA Jain College Auditorium, Ambala\n\n` +
     `Please present this pass at the entrance gate for instant QR verification.`;
 
   const filename = `Tarunodaya_Pass_${registration.name.replace(/\s+/g, '_')}_${registration.ticketId.replace('#', '')}`;

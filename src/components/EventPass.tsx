@@ -92,7 +92,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
     setShareNotice(null);
 
     const shareTitle = `${registration.name}'s Tarunodaya 2026 Pass`;
-    const shareText = `🎟️ Tarunodaya 2026 Official Entry Pass\nAttendee: ${registration.name}\nTicket ID: ${registration.ticketId}\nDate: Aug 30, 2026 at 3:00 PM - 6:00 PM\nVenue: Shri Atmanand Jain College, Ambala`;
+    const shareText = `🎟️ Tarunodaya 2026 Official Entry Pass\nAttendee: ${registration.name}\nTicket ID: ${registration.ticketId}\nDate: Aug 30, 2026 at 3:00 PM - 6:30 PM\nVenue: SA Jain College Auditorium, Ambala`;
 
     try {
       const passFile = await generatePassJpegFile(elementId, filename);
@@ -236,19 +236,13 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
               id="btn-whatsapp-share"
               onClick={handleWhatsAppShare}
               disabled={isWhatsAppSharing}
-              className="px-3.5 py-1.5 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer disabled:opacity-60"
+              className="p-1.5 px-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-lg transition-all flex items-center justify-center shadow-2xs cursor-pointer disabled:opacity-60"
               title={`Send pass on WhatsApp to ${registration.phone}`}
             >
               {isWhatsAppSharing ? (
-                <>
-                  <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  <span className="hidden sm:inline">Preparing...</span>
-                </>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin m-0.5" />
               ) : (
-                <>
-                  <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
-                  <span>WhatsApp</span>
-                </>
+                <WhatsAppIcon className="w-5 h-5 text-white" />
               )}
             </button>
 
@@ -280,15 +274,24 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
               id="btn-download-pass-jpeg"
               onClick={handleDownload}
               disabled={isDownloading}
-              className="p-1.5 px-3 bg-black text-white rounded-lg transition-all flex items-center justify-center shadow-sm shadow-slate-200 cursor-pointer disabled:opacity-50"
+              className="px-3.5 py-1.5 bg-black text-white rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-sm shadow-slate-200 cursor-pointer disabled:opacity-50"
               title="Save JPEG"
             >
               {isDownloading ? (
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin m-0.5" />
+                <>
+                  <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="hidden sm:inline">Saving...</span>
+                </>
               ) : downloadSuccess ? (
-                <Check className="w-5 h-5 text-emerald-400" />
+                <>
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Saved!</span>
+                </>
               ) : (
-                <Download className="w-5 h-5 text-amber-300" />
+                <>
+                  <Download className="w-3.5 h-3.5 text-amber-300" />
+                  <span>Download</span>
+                </>
               )}
             </button>
           </div>
@@ -308,9 +311,10 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
       {/* Printable & Downloadable Event Pass Card */}
       <div 
         id={elementId} 
-        className={`rounded-3xl border-2 border-amber-300/80 shadow-2xl overflow-hidden max-w-[420px] mx-auto relative flex flex-col ${getBodyBgStyle()}`}
+        className="bg-black p-4 sm:p-5 max-w-[420px] mx-auto rounded-[32px] sm:rounded-[36px] shadow-2xl"
       >
-        {/* Pass Header Banner */}
+        <div className={`rounded-3xl border-2 border-amber-300/80 overflow-hidden relative flex flex-col ${getBodyBgStyle()}`}>
+          {/* Pass Header Banner */}
         <div className={`p-3.5 sm:p-4 relative overflow-hidden ${getHeaderStyle()}`}>
           {/* Decorative top border accent */}
           <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-400" />
@@ -355,7 +359,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
                 <h3 className="font-updock font-bold text-[30px] sm:text-[40px] text-amber-300 leading-none drop-shadow-sm truncate">
                   Tarunodaya 2026
                 </h3>
-                <span className="font-rozha text-amber-400 text-xs sm:text-sm leading-tight block mt-0.5">
+                <span className="font-tiro text-amber-400 text-xs sm:text-sm leading-tight block mt-0.5">
                   तरुणोदय • अंबाला
                 </span>
               </div>
@@ -395,7 +399,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
           title="Click to change quote"
           className="bg-gradient-to-r from-indigo-900 via-blue-800 to-amber-700 text-white px-3 py-1.5 text-center border-y border-indigo-400/40 shadow-inner relative z-10 cursor-pointer select-none group transition-all hover:brightness-105"
         >
-          <p className="text-[10px] sm:text-[11px] font-serif italic font-semibold tracking-wide flex items-center justify-center gap-1.5 flex-wrap">
+          <p className="text-[10px] sm:text-[11px] font-tiro italic font-semibold tracking-wide flex items-center justify-center gap-1.5 flex-wrap">
             <Sparkles className="w-3 h-3 text-amber-300 shrink-0 group-hover:rotate-45 transition-transform" />
             <span>&ldquo;{currentQuote.text}&rdquo;</span>
             <span className="font-sans not-italic font-bold text-amber-200 text-[9px] opacity-90">— {currentQuote.author}</span>
@@ -498,17 +502,17 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
               <div className="bg-amber-900/5 backdrop-blur-xs p-2 rounded-xl border border-amber-300/80 space-y-1 text-[10px] mt-auto">
                 <div className="flex items-center gap-1 font-bold text-slate-900">
                   <Clock className="w-3 h-3 text-orange-600 shrink-0" />
-                  <span>03:00 PM – 06:00 PM</span>
+                  <span>03:00 PM – 06:30 PM</span>
                 </div>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Shri%20Atmanand%20Jain%20College%2C%20Ambala"
+                  href="https://www.google.com/maps/search/?api=1&query=SA%20Jain%20College%20Auditorium%2C%20Ambala"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-1 text-slate-900 hover:text-orange-700 hover:underline decoration-orange-500/50 leading-tight transition-colors"
                   title="Open location on Google Maps"
                 >
                   <MapPin className="w-3 h-3 text-orange-600 shrink-0 mt-0.5" />
-                  <span className="line-clamp-2 font-bold">Shri Atmanand Jain College, Ambala</span>
+                  <span className="line-clamp-2 font-bold">SA Jain College Auditorium, Ambala</span>
                 </a>
               </div>
             </div>
@@ -551,6 +555,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
           <p className="text-[8px] text-amber-200/90 font-bold uppercase tracking-widest">
             Organizers: Present QR pass at check-in counter • Tarunodaya 2026
           </p>
+        </div>
         </div>
       </div>
     </div>

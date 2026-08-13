@@ -50,7 +50,7 @@ const AnimatedDigit: React.FC<{ value: string | number; suffix: string }> = ({ v
 };
 
 export const EventHeader: React.FC = () => {
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Shri Atmanand Jain College, Ambala`)}`;
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`SA Jain College Auditorium, Ambala`)}`;
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export const EventHeader: React.FC = () => {
                 <h1 className="font-updock font-bold text-2xl sm:text-3.5xl text-amber-300 leading-none">
                   Tarunodaya 2026
                 </h1>
-                <span className="text-amber-400 font-rozha text-sm sm:text-base leading-none">| तरुणोदय</span>
+                <span className="text-amber-400 font-tiro text-sm sm:text-base leading-none">| तरुणोदय</span>
               </div>
             </div>
 
@@ -99,7 +99,7 @@ export const EventHeader: React.FC = () => {
                 title="Open location on Google Maps"
               >
                 <MapPin className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-                <span>Shri Atmanand Jain College, Ambala</span>
+                <span>SA Jain College Auditorium, Ambala</span>
               </a>
             </div>
           </div>
@@ -125,7 +125,7 @@ export const EventHeader: React.FC = () => {
           {/* Time on Left */}
           <div className="flex items-center gap-1.5 text-xs text-amber-200 font-bold">
             <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-            <span>03:00 PM – 06:00 PM</span>
+            <span>03:00 PM – 06:30 PM</span>
           </div>
 
           {/* Dynamic Compact Countdown Pill aligned to Right */}

@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-[10px] sm:text-[11px] text-indigo-900/80 font-bold tracking-wide hidden xs:block">
-                <span className="font-rozha text-xs text-indigo-900">तरुणोदय</span> • Ambala
+                <span className="font-tiro text-xs text-indigo-900">तरुणोदय</span> • Ambala
               </p>
             </div>
           </div>

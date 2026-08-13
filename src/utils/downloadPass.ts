@@ -11,7 +11,7 @@ export async function generatePassJpegDataUrl(elementId: string): Promise<string
     quality: 0.95,
     pixelRatio: 2, // High resolution for sharp text and QR code
     backgroundColor: '#ffffff',
-    fontEmbedCSS: '', // Suppress remote CSS rule parsing to avoid CORS SecurityError
+    
     cacheBust: false,
     filter: (domNode: Node) => {
       if (domNode instanceof HTMLElement && domNode.classList.contains('download-exclude')) {

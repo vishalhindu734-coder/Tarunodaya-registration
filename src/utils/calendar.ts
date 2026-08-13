@@ -5,7 +5,7 @@ export function getGoogleCalendarUrl(): string {
   const details = encodeURIComponent(
     `तरुणोदय : अम्बाला\n\n` +
     `📅 Date: 30 August 2026\n` +
-    `⏰ Time: 03:00 PM to 06:00 PM\n` +
+    `⏰ Time: 03:00 PM to 06:30 PM\n` +
     `📍 Venue: ${YUVA_SANGAM_EVENT.venue}, ${YUVA_SANGAM_EVENT.address}\n\n` +
     `🔔 EVENT REMINDERS:\n` +
     `• 1 Day Before (29 Aug 2026 at 03:00 PM)\n` +
@@ -16,10 +16,10 @@ export function getGoogleCalendarUrl(): string {
     `${YUVA_SANGAM_EVENT.venue}, ${YUVA_SANGAM_EVENT.address}, ${YUVA_SANGAM_EVENT.city}, ${YUVA_SANGAM_EVENT.state}`
   );
 
-  // August 30, 2026: 03:00 PM IST to 06:00 PM IST
+  // August 30, 2026: 03:00 PM IST to 06:30 PM IST
   // 03:00 PM IST = 09:30:00 UTC
-  // 06:00 PM IST = 12:30:00 UTC
-  const dates = "20260830T093000Z/20260830T123000Z";
+  // 06:30 PM IST = 13:00:00 UTC
+  const dates = "20260830T093000Z/20260830T130000Z";
 
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 }
@@ -27,14 +27,14 @@ export function getGoogleCalendarUrl(): string {
 export function getOutlookCalendarUrl(): string {
   const title = encodeURIComponent("तरुणोदय : अम्बाला");
   const details = encodeURIComponent(
-    `तरुणोदय : अम्बाला\nDate: 30 August 2026\nTime: 03:00 PM to 06:00 PM\nVenue: ${YUVA_SANGAM_EVENT.venue}, ${YUVA_SANGAM_EVENT.address}.\nReminders: 1 day before, 1 hour before, 30 minutes before.`
+    `तरुणोदय : अम्बाला\nDate: 30 August 2026\nTime: 03:00 PM to 06:30 PM\nVenue: ${YUVA_SANGAM_EVENT.venue}, ${YUVA_SANGAM_EVENT.address}.\nReminders: 1 day before, 1 hour before, 30 minutes before.`
   );
   const location = encodeURIComponent(
     `${YUVA_SANGAM_EVENT.venue}, ${YUVA_SANGAM_EVENT.address}, ${YUVA_SANGAM_EVENT.city}, ${YUVA_SANGAM_EVENT.state}`
   );
 
   const startdt = "2026-08-30T15:00:00+05:30";
-  const enddt = "2026-08-30T18:00:00+05:30";
+  const enddt = "2026-08-30T18:30:00+05:30";
 
   return `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${title}&startdt=${startdt}&enddt=${enddt}&body=${details}&location=${location}`;
 }
@@ -47,10 +47,10 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 SUMMARY:तरुणोदय : अम्बाला
-DESCRIPTION:तरुणोदय : अम्बाला\\nDate: 30 August 2026\\nTime: 03:00 PM to 06:00 PM\\nVenue: ${YUVA_SANGAM_EVENT.venue}\\, ${YUVA_SANGAM_EVENT.address}\\n\\nReminders:\\n- 1 day before\\n- 1 hour before\\n- 30 minutes before
+DESCRIPTION:तरुणोदय : अम्बाला\\nDate: 30 August 2026\\nTime: 03:00 PM to 06:30 PM\\nVenue: ${YUVA_SANGAM_EVENT.venue}\\, ${YUVA_SANGAM_EVENT.address}\\n\\nReminders:\\n- 1 day before\\n- 1 hour before\\n- 30 minutes before
 LOCATION:${YUVA_SANGAM_EVENT.venue}\\, ${YUVA_SANGAM_EVENT.address}\\, ${YUVA_SANGAM_EVENT.city}\\, ${YUVA_SANGAM_EVENT.state}
 DTSTART:20260830T093000Z
-DTEND:20260830T123000Z
+DTEND:20260830T130000Z
 STATUS:CONFIRMED
 SEQUENCE:0
 BEGIN:VALARM
