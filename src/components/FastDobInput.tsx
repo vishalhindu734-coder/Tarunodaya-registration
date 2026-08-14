@@ -105,7 +105,7 @@ export const FastDobInput: React.FC<FastDobInputProps> = ({ value, onChange }) =
       <div className="grid grid-cols-3 gap-2 items-center">
         {/* Day */}
         <div className="min-w-0">
-          <label className="block text-[8px] sm:text-[8.5px] font-bold text-indigo-900/70 uppercase tracking-widest mb-0.5 text-center">
+          <label className="block text-[8px] sm:text-[8.5px] font-bold text-orange-900/70 uppercase tracking-widest mb-0.5 text-center">
             Day (DD)
           </label>
           <input
@@ -116,13 +116,13 @@ export const FastDobInput: React.FC<FastDobInputProps> = ({ value, onChange }) =
             placeholder="DD"
             value={day}
             onChange={handleDayChange}
-            className="w-full text-center py-1.5 sm:py-1.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all placeholder:text-slate-300 shadow-2xs"
+            className="w-full text-center py-1.5 sm:py-1.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-slate-300 shadow-2xs"
           />
         </div>
 
         {/* Month */}
         <div className="min-w-0">
-          <label className="block text-[8px] sm:text-[8.5px] font-bold text-indigo-900/70 uppercase tracking-widest mb-0.5 text-center">
+          <label className="block text-[8px] sm:text-[8.5px] font-bold text-orange-900/70 uppercase tracking-widest mb-0.5 text-center">
             Month (MM)
           </label>
           <input
@@ -134,13 +134,13 @@ export const FastDobInput: React.FC<FastDobInputProps> = ({ value, onChange }) =
             placeholder="MM"
             value={month}
             onChange={handleMonthChange}
-            className="w-full text-center py-1.5 sm:py-1.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all placeholder:text-slate-300 shadow-2xs"
+            className="w-full text-center py-1.5 sm:py-1.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-slate-300 shadow-2xs"
           />
         </div>
 
         {/* Year */}
         <div className="min-w-0">
-          <label className="block text-[8px] sm:text-[8.5px] font-bold text-indigo-900/70 uppercase tracking-widest mb-0.5 text-center">
+          <label className="block text-[8px] sm:text-[8.5px] font-bold text-orange-900/70 uppercase tracking-widest mb-0.5 text-center">
             Year (YYYY)
           </label>
           <input
@@ -152,14 +152,14 @@ export const FastDobInput: React.FC<FastDobInputProps> = ({ value, onChange }) =
             placeholder="YYYY"
             value={year}
             onChange={handleYearChange}
-            className="w-full text-center py-1.5 sm:py-1.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all placeholder:text-slate-300 shadow-2xs"
+            className="w-full text-center py-1.5 sm:py-1.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-black tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-slate-300 shadow-2xs"
           />
         </div>
       </div>
 
       {/* Calculated Age Live Badge - Rendered below inputs so layout never distorts */}
       {ageString && ageNum !== null && (
-        <div className="flex items-center justify-between bg-gradient-to-r from-indigo-700 via-blue-700 to-orange-600 text-white px-2.5 py-1 rounded-xl shadow-xs border border-indigo-300/40 animate-fade-in mt-1">
+        <div className="flex items-center justify-between bg-gradient-to-r from-orange-700 via-amber-600 to-orange-600 text-white px-2.5 py-1 rounded-xl shadow-xs border border-orange-300/40 animate-fade-in mt-1">
           <span className="text-[11px] font-bold flex items-center gap-1.5">
             <Sparkles className="w-3 h-3 text-amber-300" />
             <span>Age:</span>

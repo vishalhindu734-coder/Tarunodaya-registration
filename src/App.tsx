@@ -78,7 +78,7 @@ export default function App() {
 
               <div className="hidden lg:block lg:col-span-5 bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-6 shadow-sm">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-600 border border-slate-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
                   Simple Entry Process
                 </div>
 

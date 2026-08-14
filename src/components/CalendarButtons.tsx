@@ -103,7 +103,7 @@ export const CalendarButtons: React.FC<CalendarButtonsProps> = ({ variant = 'com
             className="flex items-center justify-between px-3.5 py-2.5 hover:bg-amber-500/20 text-slate-100 font-bold transition-colors"
           >
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500" />
+              <span className="w-2 h-2 rounded-full bg-orange-500" />
               Google Calendar
             </span>
             <ExternalLink className="w-3 h-3 text-slate-400" />

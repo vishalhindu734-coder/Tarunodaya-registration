@@ -61,12 +61,12 @@ export const EventHeader: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-950 text-white rounded-xl sm:rounded-2xl border border-indigo-400/40 p-3 sm:p-4 mb-3 sm:mb-4 relative overflow-visible z-20 shadow-md shadow-indigo-950/30">
+    <div className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white rounded-xl sm:rounded-2xl border border-orange-500/30 p-3 sm:p-4 mb-3 sm:mb-4 relative overflow-visible z-20 shadow-md shadow-orange-950/30">
       {/* Decorative top border line */}
-      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-orange-500 to-indigo-400 rounded-t-xl sm:rounded-t-2xl" />
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-t-xl sm:rounded-t-2xl" />
       
       {/* Background radial glow */}
-      <div className="absolute -top-12 left-1/3 w-48 h-24 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute -top-12 left-1/3 w-48 h-24 bg-orange-500/20 rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col gap-2.5">
         {/* Top Section: Left (Title + Organizer + Venue) & Right (30 August Badge + Save Event Button) */}
@@ -74,19 +74,8 @@ export const EventHeader: React.FC = () => {
           {/* Left Column */}
           <div className="flex flex-col gap-1.5 min-w-0 flex-1">
             {/* Title & Icon */}
-            <div className="flex items-center gap-2.5 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-600 to-orange-500 p-0.5 shrink-0 shadow-xs flex items-center justify-center">
-                <div className="w-full h-full bg-slate-950 rounded-[6px] flex items-center justify-center text-amber-300">
-                  <Flame className="w-4 h-4 text-amber-300 fill-amber-300/30" />
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 flex-wrap min-w-0">
-                <h1 className="font-updock font-bold text-2xl sm:text-3.5xl text-amber-300 leading-none">
-                  Tarunodaya 2026
-                </h1>
-                <span className="text-amber-400 font-tiro text-sm sm:text-base leading-none">| तरुणोदय</span>
-              </div>
+            <div className="flex items-center gap-3 min-w-0">
+              <img src="/logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-14 sm:h-16 object-contain" />
             </div>
 
             {/* Venue Details */}
@@ -106,11 +95,11 @@ export const EventHeader: React.FC = () => {
 
           {/* Right Column: 30 August Date Badge + Save Event Button underneath */}
           <div className="shrink-0 flex flex-col items-end gap-1.5 sm:gap-2">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-indigo-500/25 via-blue-500/15 to-amber-500/20 border border-indigo-400/40 px-3 py-1.5 rounded-xl text-center shadow-xs min-w-[72px] sm:min-w-[80px]">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-500/20 via-red-500/15 to-amber-500/20 border border-orange-500/30 px-3 py-1.5 rounded-xl text-center shadow-xs min-w-[72px] sm:min-w-[80px]">
               <span className="text-2xl sm:text-3xl font-black tracking-tight text-amber-300 leading-none">
                 30
               </span>
-              <span className="text-[10px] sm:text-[11px] font-bold text-indigo-100 uppercase tracking-widest mt-0.5">
+              <span className="text-[10px] sm:text-[11px] font-bold text-orange-100 uppercase tracking-widest mt-0.5">
                 August
               </span>
             </div>
@@ -121,7 +110,7 @@ export const EventHeader: React.FC = () => {
         </div>
 
         {/* Bottom Row: Time on Left, Animated Countdown Timer on Right (aligned with Date) */}
-        <div className="flex items-center justify-between flex-wrap gap-2.5 pt-2 border-t border-indigo-500/20 relative z-30">
+        <div className="flex items-center justify-between flex-wrap gap-2.5 pt-2 border-t border-orange-500/20 relative z-30">
           {/* Time on Left */}
           <div className="flex items-center gap-1.5 text-xs text-amber-200 font-bold">
             <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
@@ -130,7 +119,7 @@ export const EventHeader: React.FC = () => {
 
           {/* Dynamic Compact Countdown Pill aligned to Right */}
           {!timeLeft.isPast ? (
-            <div className="flex items-center gap-1.5 bg-gradient-to-r from-indigo-950/90 via-slate-900/80 to-indigo-950/90 border border-indigo-400/40 px-2 py-0.5 rounded-lg text-[11px] font-mono font-bold text-amber-300 shadow-xs ring-1 ring-indigo-500/20 ml-auto">
+            <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-950/90 via-slate-900/80 to-blue-950/90 border border-orange-500/30 px-2 py-0.5 rounded-lg text-[11px] font-mono font-bold text-amber-300 shadow-xs ring-1 ring-orange-500/20 ml-auto">
               <Timer className="w-3.5 h-3.5 text-amber-400 animate-pulse shrink-0" />
               <div className="flex items-center gap-1">
                 <AnimatedDigit value={timeLeft.days} suffix="d" />

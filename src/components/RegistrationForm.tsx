@@ -302,21 +302,21 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
   }
 
   return (
-    <div className="bg-gradient-to-b from-indigo-50/70 via-white to-amber-50/40 rounded-2xl sm:rounded-3xl border border-indigo-200/90 shadow-md shadow-indigo-950/5 p-4 sm:p-7 relative overflow-hidden">
+    <div className="bg-gradient-to-b from-orange-50/70 via-white to-amber-50/40 rounded-2xl sm:rounded-3xl border border-orange-200/90 shadow-md shadow-orange-950/5 p-4 sm:p-7 relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl pointer-events-none" />
 
-      <div className="relative z-10 flex items-center justify-between mb-3.5 pb-2.5 sm:pb-3.5 border-b border-indigo-100/80 gap-2">
+      <div className="relative z-10 flex items-center justify-between mb-3.5 pb-2.5 sm:pb-3.5 border-b border-orange-100/80 gap-2">
         <div>
           <div className="flex items-center gap-1.5 mb-1">
-            <span className="text-[10px] font-tiro text-indigo-900 bg-indigo-100/90 border border-indigo-200 px-2.5 py-0.5 rounded-full tracking-wider">
+            <span className="text-[10px] font-tiro text-orange-900 bg-orange-100/90 border border-orange-200 px-2.5 py-0.5 rounded-full tracking-wider">
               युवा शक्ति • राष्ट्र निर्माण
             </span>
           </div>
           <h2 className="text-base sm:text-xl font-black text-slate-900 tracking-tight flex items-center gap-2">
             <span>Tarunodaya Registration Form</span>
-            <span className="text-indigo-900 font-tiro text-sm sm:text-base font-normal">| तरुणोदय</span>
+            <span className="text-orange-900 font-tiro text-sm sm:text-base font-normal">| तरुणोदय</span>
           </h2>
           <p className="text-[11px] text-slate-600 font-medium mt-0.5">
             Fill attendee details to generate your verified Tarunodaya 2026 pass. <span className="font-bold text-orange-700">(Invited: Male youth aged 15 to 40 years)</span>
@@ -327,10 +327,10 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
           <button
             type="button"
             onClick={resetForm}
-            className="px-2.5 py-1 bg-indigo-100/80 hover:bg-indigo-200 text-indigo-950 border border-indigo-300 rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 transition-all shrink-0 cursor-pointer"
+            className="px-2.5 py-1 bg-orange-100/80 hover:bg-orange-200 text-orange-950 border border-orange-300 rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 transition-all shrink-0 cursor-pointer"
             title="Clear all form fields to start fresh"
           >
-            <RotateCcw className="w-3 h-3 text-indigo-800" />
+            <RotateCcw className="w-3 h-3 text-orange-800" />
             <span>Clear</span>
           </button>
         )}
@@ -349,11 +349,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {/* 1) Name Field */}
           <div className="sm:col-span-2">
-            <label htmlFor="user-name" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80 mb-1">
+            <label htmlFor="user-name" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80 mb-1">
               1) Full Name <span className="text-orange-600">*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-600/70">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-orange-600/70">
                 <User className="w-4 h-4" />
               </div>
               <input
@@ -363,7 +363,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                 placeholder="e.g. Aarav Sharma"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all placeholder:text-slate-400 font-medium"
+                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-slate-400 font-medium"
               />
             </div>
           </div>
@@ -371,7 +371,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
           {/* 2) Date of Birth Field (Fast Keyboard Entry) */}
           <div>
             <div className="flex items-center justify-between mb-1">
-              <label className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80">
+              <label className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80">
                 2) Date of Birth (जन्म तिथि) <span className="text-orange-600">*</span>
               </label>
             </div>
@@ -386,16 +386,16 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
             {/* Basti Field */}
             <div className="relative" ref={dropdownRef}>
               <div className="flex items-center justify-between mb-1">
-                <label htmlFor="village-input" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80">
+                <label htmlFor="village-input" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80">
                   3) Basti (बस्ती) <span className="text-orange-600">*</span>
                 </label>
-                <span className="text-[9px] font-bold text-indigo-900 bg-indigo-100 px-2 py-0.5 rounded-full border border-indigo-200">
+                <span className="text-[9px] font-bold text-orange-900 bg-orange-100 px-2 py-0.5 rounded-full border border-orange-200">
                   {matchingVillages.length} {matchingVillages.length === 1 ? 'option' : 'options'}
                 </span>
               </div>
 
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-600/70">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-orange-600/70">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <input
@@ -424,12 +424,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                       }
                     }
                   }}
-                  className="w-full pl-9 pr-14 py-2 sm:py-2.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all font-medium placeholder:text-slate-400"
+                  className="w-full pl-9 pr-14 py-2 sm:py-2.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-medium placeholder:text-slate-400"
                 />
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-indigo-700 hover:text-indigo-950 transition-colors cursor-pointer"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-orange-700 hover:text-orange-950 transition-colors cursor-pointer"
                   title="Toggle Basti dropdown"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -438,10 +438,10 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
 
               {/* Dynamic Dropdown List */}
               {isDropdownOpen && (
-                <div className="absolute z-30 left-0 right-0 mt-1.5 bg-white border border-indigo-300 rounded-2xl shadow-xl max-h-60 overflow-y-auto divide-y divide-indigo-100/60 animate-fade-in">
-                  <div className="p-2 bg-indigo-50/90 sticky top-0 z-10 border-b border-indigo-200/60 text-[10px] font-bold text-indigo-900 uppercase tracking-wider flex items-center justify-between">
+                <div className="absolute z-30 left-0 right-0 mt-1.5 bg-white border border-orange-300 rounded-2xl shadow-xl max-h-60 overflow-y-auto divide-y divide-orange-100/60 animate-fade-in">
+                  <div className="p-2 bg-orange-50/90 sticky top-0 z-10 border-b border-orange-200/60 text-[10px] font-bold text-orange-900 uppercase tracking-wider flex items-center justify-between">
                     <span>Select Basti (Basti - Upnagar)</span>
-                    <span className="text-[9px] font-mono text-indigo-700">Click to choose</span>
+                    <span className="text-[9px] font-mono text-orange-700">Click to choose</span>
                   </div>
                   {matchingVillages.length > 0 ? (
                     matchingVillages.map((item, idx) => (
@@ -449,12 +449,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                         key={`${item.gram}-${item.mandal}-${idx}`}
                         type="button"
                         onClick={() => handleSelectVillage(item)}
-                        className="w-full text-left px-3.5 py-2.5 hover:bg-indigo-100/70 text-xs text-slate-800 transition-colors flex items-center justify-between group cursor-pointer"
+                        className="w-full text-left px-3.5 py-2.5 hover:bg-orange-100/70 text-xs text-slate-800 transition-colors flex items-center justify-between group cursor-pointer"
                       >
-                        <span className="font-bold text-slate-900 group-hover:text-indigo-950">
+                        <span className="font-bold text-slate-900 group-hover:text-orange-950">
                           {item.formatted}
                         </span>
-                        <span className="text-[10px] font-semibold text-indigo-900 bg-indigo-100/90 px-2 py-0.5 rounded border border-indigo-200/70 shrink-0 ml-2">
+                        <span className="text-[10px] font-semibold text-orange-900 bg-orange-100/90 px-2 py-0.5 rounded border border-orange-200/70 shrink-0 ml-2">
                           Upnagar: {item.mandal}
                         </span>
                       </button>
@@ -470,11 +470,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
 
             {/* Upnagar Field - Auto-filled & skipped on Tab */}
             <div>
-              <label htmlFor="mandal-input" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80 mb-1">
-                4) Upnagar (उपनगर) <span className="text-[9px] text-indigo-700 font-normal ml-1">(Auto-filled)</span>
+              <label htmlFor="mandal-input" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80 mb-1">
+                4) Upnagar (उपनगर) <span className="text-[9px] text-orange-700 font-normal ml-1">(Auto-filled)</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-600/70">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-orange-600/70">
                   <Building2 className="w-4 h-4" />
                 </div>
                 <input
@@ -485,10 +485,10 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                   placeholder="Auto-filled Upnagar Name"
                   value={mandalInput}
                   onChange={(e) => setMandalInput(e.target.value)}
-                  className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-indigo-100/30 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-bold focus:outline-none cursor-default select-none"
+                  className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-orange-100/30 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm font-bold focus:outline-none cursor-default select-none"
                 />
               </div>
-              <p className="text-[10px] text-indigo-950/60 font-medium mt-1">
+              <p className="text-[10px] text-orange-950/60 font-medium mt-1">
                 Automatically assigned from Basti selection
               </p>
             </div>
@@ -496,11 +496,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
 
           {/* 5) Mobile Number Field */}
           <div>
-            <label htmlFor="user-phone" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80 mb-1">
+            <label htmlFor="user-phone" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80 mb-1">
               5) Mobile Number <span className="text-orange-600">*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-600/70">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-orange-600/70">
                 <Phone className="w-4 h-4" />
               </div>
               <input
@@ -511,18 +511,18 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                 placeholder="10-digit phone number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all font-medium placeholder:text-slate-400"
+                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-medium placeholder:text-slate-400"
               />
             </div>
           </div>
 
           {/* 6) Additional Info Field (Optional) */}
           <div>
-            <label htmlFor="user-info" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-950/80 mb-1">
+            <label htmlFor="user-info" className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-orange-950/80 mb-1">
               6) Additional Note <span className="text-slate-400 font-normal">(Optional)</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-600/70">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-orange-600/70">
                 <FileText className="w-4 h-4" />
               </div>
               <input
@@ -531,14 +531,14 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                 placeholder="e.g. Student, Volunteer"
                 value={otherInfo}
                 onChange={(e) => setOtherInfo(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-indigo-50/40 border border-indigo-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all font-medium placeholder:text-slate-400"
+                className="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-orange-50/40 border border-orange-200/90 rounded-xl text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-medium placeholder:text-slate-400"
               />
             </div>
           </div>
         </div>
 
         <div className="pt-1 flex items-center justify-between text-[10px] text-slate-400 font-medium">
-          <span className="flex items-center gap-1 font-semibold text-indigo-900">
+          <span className="flex items-center gap-1 font-semibold text-orange-900">
             <ShieldCheck className="w-3.5 h-3.5 text-orange-600 shrink-0" />
             Verified entry pass • Males 15–40 Years
           </span>
@@ -550,7 +550,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
           id="btn-submit-registration"
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 sm:py-3.5 bg-gradient-to-r from-orange-600 via-amber-600 to-indigo-700 hover:from-orange-500 hover:to-indigo-800 text-white rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-indigo-600/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+          className="w-full py-3 sm:py-3.5 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 hover:from-orange-500 hover:to-orange-800 text-white rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-orange-600/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
         >
           {isSubmitting ? (
             <div className="flex items-center gap-2">
@@ -569,11 +569,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
       {/* Duplicate Registration Warning Dialogue */}
       {existingPassesWarning && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-white border border-indigo-200 rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl relative space-y-4">
+          <div className="bg-white border border-orange-200 rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl relative space-y-4">
             {/* Header */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-indigo-100 border border-indigo-300 text-indigo-700 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                <AlertTriangle className="w-5 h-5 text-indigo-600" />
+              <div className="w-10 h-10 rounded-2xl bg-orange-100 border border-orange-300 text-orange-700 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                <AlertTriangle className="w-5 h-5 text-orange-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="font-extrabold text-slate-900 text-base sm:text-lg tracking-tight">
@@ -592,26 +592,26 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
                 return (
                   <div
                     key={pass.ticketId}
-                    className="bg-indigo-50/70 border border-indigo-200/90 rounded-2xl p-3 flex items-center justify-between gap-3 shadow-2xs"
+                    className="bg-orange-50/70 border border-orange-200/90 rounded-2xl p-3 flex items-center justify-between gap-3 shadow-2xs"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-extrabold text-slate-900 text-xs sm:text-sm truncate">
                           {pass.name}
                         </span>
-                        <span className="font-mono font-bold text-[10px] px-1.5 py-0.5 rounded bg-indigo-200/80 text-indigo-950 border border-indigo-300 shrink-0">
+                        <span className="font-mono font-bold text-[10px] px-1.5 py-0.5 rounded bg-orange-200/80 text-orange-950 border border-orange-300 shrink-0">
                           #{pass.ticketId}
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-600 font-medium truncate mt-0.5 flex items-center gap-1.5">
                         {pass.village && <span>{pass.village}</span>}
                         {pass.subDivision && <span>({pass.subDivision})</span>}
-                        {catDetails && <span className="font-bold text-indigo-800">• {catDetails.shortWarriorName}</span>}
+                        {catDetails && <span className="font-bold text-orange-800">• {catDetails.shortWarriorName}</span>}
                       </p>
                     </div>
 
                     <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shrink-0 ${
-                      pass.checkedIn ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-indigo-100 text-indigo-800 border border-indigo-300'
+                      pass.checkedIn ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-orange-100 text-orange-800 border border-orange-300'
                     }`}>
                       {pass.checkedIn ? 'Checked-In' : 'Ready'}
                     </span>
@@ -636,7 +636,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSuccess })
               <button
                 type="button"
                 onClick={() => executeSaveRegistration(existingPassesWarning.pendingData)}
-                className="px-4 py-2.5 bg-gradient-to-r from-orange-600 to-indigo-700 hover:from-orange-500 hover:to-indigo-800 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-indigo-600/20 cursor-pointer active:scale-95"
+                className="px-4 py-2.5 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-800 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-600/20 cursor-pointer active:scale-95"
               >
                 Proceed & Generate Pass
               </button>

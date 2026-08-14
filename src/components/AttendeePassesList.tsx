@@ -232,7 +232,7 @@ export const AttendeePassesList: React.FC<AttendeePassesListProps> = ({
             <span className="text-slate-500 font-medium">Need a new registration?</span>
             <button
               onClick={onRegisterNew}
-              className="px-4 py-2 bg-gradient-to-r from-orange-600 via-amber-600 to-indigo-700 hover:from-orange-500 hover:to-indigo-800 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-xs"
+              className="px-4 py-2 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 hover:from-orange-500 hover:to-orange-800 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-xs"
             >
               + Register New Attendee
             </button>

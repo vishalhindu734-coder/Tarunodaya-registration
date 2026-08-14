@@ -142,7 +142,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
   const getHeaderStyle = () => {
     switch (passTheme) {
       case 'VIVEKANANDA':
-        return 'bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-950 text-white border-b-2 border-indigo-400/40';
+        return 'bg-gradient-to-r from-orange-950 via-slate-900 to-orange-950 text-white border-b-2 border-orange-400/40';
       case 'ROYAL_GOLD':
         return 'bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white border-b-2 border-amber-400/40';
       case 'CLASSIC_BLACK':
@@ -154,9 +154,9 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
   const getBodyBgStyle = () => {
     switch (passTheme) {
       case 'VIVEKANANDA':
-        return 'bg-gradient-to-b from-indigo-50/90 via-amber-50/30 to-white';
+        return 'bg-gradient-to-b from-orange-50/90 via-amber-50/30 to-white';
       case 'ROYAL_GOLD':
-        return 'bg-gradient-to-b from-slate-50 via-indigo-50/40 to-white';
+        return 'bg-gradient-to-b from-slate-50 via-orange-50/40 to-white';
       case 'CLASSIC_BLACK':
       default:
         return 'bg-white';
@@ -224,7 +224,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
             <a
               id="btn-call-attendee"
               href={`tel:${registration.phone}`}
-              className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+              className="px-3.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
               title={`Direct call to ${registration.phone}`}
             >
               <Phone className="w-3.5 h-3.5 text-white" />
@@ -352,17 +352,8 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
             </div>
 
             {/* Abstract Event Emblem & Event Title Row */}
-            <div className="flex items-center gap-3 pt-0.5">
-              <AbstractPassEmblem size={44} className="shrink-0 drop-shadow-md" />
-              
-              <div className="min-w-0 flex-1">
-                <h3 className="font-updock font-bold text-[30px] sm:text-[40px] text-amber-300 leading-none drop-shadow-sm truncate">
-                  Tarunodaya 2026
-                </h3>
-                <span className="font-tiro text-amber-400 text-xs sm:text-sm leading-tight block mt-0.5">
-                  तरुणोदय • अंबाला
-                </span>
-              </div>
+            <div className="flex items-center gap-3 py-2">
+              <img src="/logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-16 sm:h-20 object-contain drop-shadow-md bg-white/10 rounded-xl p-1.5" />
             </div>
 
             {/* Subtitle & Date Row */}
@@ -397,7 +388,7 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
         <div 
           onClick={cycleQuote}
           title="Click to change quote"
-          className="bg-gradient-to-r from-indigo-900 via-blue-800 to-amber-700 text-white px-3 py-1.5 text-center border-y border-indigo-400/40 shadow-inner relative z-10 cursor-pointer select-none group transition-all hover:brightness-105"
+          className="bg-gradient-to-r from-orange-900 via-slate-800 to-amber-700 text-white px-3 py-1.5 text-center border-y border-orange-400/40 shadow-inner relative z-10 cursor-pointer select-none group transition-all hover:brightness-105"
         >
           <p className="text-[10px] sm:text-[11px] font-tiro italic font-semibold tracking-wide flex items-center justify-center gap-1.5 flex-wrap">
             <Sparkles className="w-3 h-3 text-amber-300 shrink-0 group-hover:rotate-45 transition-transform" />
@@ -460,10 +451,10 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
                   </p>
                   <a
                     href={`tel:${registration.phone}`}
-                    className="font-bold text-slate-900 hover:text-blue-700 font-mono text-[10px] leading-tight whitespace-nowrap flex items-center gap-1 transition-colors"
+                    className="font-bold text-slate-900 hover:text-orange-700 font-mono text-[10px] leading-tight whitespace-nowrap flex items-center gap-1 transition-colors"
                     title="Click to call attendee"
                   >
-                    <Phone className="w-2.5 h-2.5 text-blue-600 shrink-0" />
+                    <Phone className="w-2.5 h-2.5 text-orange-600 shrink-0" />
                     <span>{formatDisplayPhone(registration.phone)}</span>
                   </a>
                 </div>
