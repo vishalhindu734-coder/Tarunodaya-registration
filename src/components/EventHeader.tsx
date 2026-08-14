@@ -75,7 +75,7 @@ export const EventHeader: React.FC = () => {
           <div className="flex flex-col gap-1.5 min-w-0 flex-1">
             {/* Title & Icon */}
             <div className="flex items-center gap-3 min-w-0">
-              <img src="/logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-14 sm:h-16 object-contain" />
+              <img src="./logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-14 sm:h-16 object-contain" />
             </div>
 
             {/* Venue Details */}

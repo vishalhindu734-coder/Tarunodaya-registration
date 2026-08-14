@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setActiveTab('register')}
             className="flex items-center cursor-pointer group"
           >
-            <img src="/logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-10 sm:h-14 object-contain group-hover:scale-105 transition-transform drop-shadow-sm" />
+            <img src="./logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-10 sm:h-14 object-contain group-hover:scale-105 transition-transform drop-shadow-sm" />
           </div>
 
           {/* Navigation Links */}

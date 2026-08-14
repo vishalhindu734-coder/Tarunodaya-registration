@@ -142,21 +142,21 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
   const getHeaderStyle = () => {
     switch (passTheme) {
       case 'VIVEKANANDA':
-        return 'bg-gradient-to-r from-orange-950 via-slate-900 to-orange-950 text-white border-b-2 border-orange-400/40';
+        return 'bg-gradient-to-r from-orange-50 via-amber-50 to-orange-100 border-b-2 border-orange-200';
       case 'ROYAL_GOLD':
-        return 'bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white border-b-2 border-amber-400/40';
+        return 'bg-gradient-to-r from-slate-50 via-orange-50 to-amber-50 border-b-2 border-amber-200';
       case 'CLASSIC_BLACK':
       default:
-        return 'bg-slate-950 text-white border-b border-slate-800';
+        return 'bg-white border-b-2 border-slate-200';
     }
   };
 
   const getBodyBgStyle = () => {
     switch (passTheme) {
       case 'VIVEKANANDA':
-        return 'bg-gradient-to-b from-orange-50/90 via-amber-50/30 to-white';
+        return 'bg-gradient-to-b from-white via-orange-50/40 to-white';
       case 'ROYAL_GOLD':
-        return 'bg-gradient-to-b from-slate-50 via-orange-50/40 to-white';
+        return 'bg-gradient-to-b from-white via-amber-50/30 to-white';
       case 'CLASSIC_BLACK':
       default:
         return 'bg-white';
@@ -327,57 +327,57 @@ export const EventPass: React.FC<EventPassProps> = ({ registration, onRegisterAn
             {/* Top Badge Row */}
             <div className="flex items-center justify-between w-full text-[9px] gap-1.5 flex-wrap">
               <div 
-                className="bg-amber-950/80 border border-amber-400/40 px-2 py-0.5 rounded-full shadow-2xs flex items-center gap-1.5 text-amber-300"
+                className="bg-white border border-amber-300/80 px-2 py-0.5 rounded-full shadow-2xs flex items-center gap-1.5 text-amber-800"
                 title="Official Entry Pass Verified"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                <Ticket className="w-3.5 h-3.5 text-amber-300" />
+                <ShieldCheck className="w-3.5 h-3.5 text-orange-500" />
+                <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                <Ticket className="w-3.5 h-3.5 text-orange-500" />
               </div>
 
               {(() => {
                 const cat = getAgeCategoryDetails(registration.dob);
                 if (!cat) return null;
                 return (
-                  <div className={`px-2.5 py-0.5 rounded-full border text-[9px] font-extrabold flex items-center gap-1.5 shadow-2xs ${cat.darkBadgeClass}`}>
+                  <div className={`px-2.5 py-0.5 rounded-full border text-[9px] font-extrabold flex items-center gap-1.5 shadow-2xs ${cat.fullBadgeClass}`}>
                     <span className={`w-1.5 h-1.5 rounded-full ${cat.dotClass} shrink-0 animate-pulse`} />
                     <span>{cat.shortLabel}</span>
                   </div>
                 );
               })()}
 
-              <span className="bg-amber-400/20 border border-amber-300/40 backdrop-blur-xs px-2 py-0.5 rounded-lg font-mono font-black uppercase tracking-widest text-amber-200 shadow-2xs">
+              <span className="bg-white border border-amber-300/80 px-2 py-0.5 rounded-lg font-mono font-black uppercase tracking-widest text-slate-800 shadow-2xs">
                 {registration.ticketId}
               </span>
             </div>
 
             {/* Abstract Event Emblem & Event Title Row */}
-            <div className="flex items-center gap-3 py-2">
-              <img src="/logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-16 sm:h-20 object-contain drop-shadow-md bg-white/10 rounded-xl p-1.5" />
+            <div className="flex items-center justify-center py-2">
+              <img src="./logo.png" alt="तरुणोदय उत्कर्ष युवा संगम" className="h-16 sm:h-20 object-contain drop-shadow-sm" />
             </div>
 
             {/* Subtitle & Date Row */}
-            <div className="flex items-center justify-between w-full pt-1.5 border-t border-amber-400/20 text-[10px]">
-              <p className="text-amber-200/90 font-medium truncate pr-2">
+            <div className="flex items-center justify-between w-full pt-1.5 border-t border-amber-300/60 text-[10px]">
+              <p className="text-slate-700 font-bold uppercase tracking-widest truncate pr-2">
                 Ambala
               </p>
 
-              <div className="inline-flex items-center gap-1.5 bg-amber-500/20 border border-amber-400/40 px-2 py-0.5 rounded-lg shrink-0">
-                <span className="font-black text-amber-300">30 Aug 2026</span>
-                <span className="text-amber-400">•</span>
-                <span className="font-bold text-amber-200">Sun</span>
+              <div className="inline-flex items-center gap-1.5 bg-white border border-amber-300/80 px-2 py-0.5 rounded-lg shrink-0 shadow-2xs">
+                <span className="font-black text-slate-800">30 Aug 2026</span>
+                <span className="text-orange-500">•</span>
+                <span className="font-bold text-slate-600">Sun</span>
               </div>
             </div>
           </div>
 
           {/* Status badge if checked in */}
           {registration.checkedIn && (
-            <div className="mt-2 pt-1.5 border-t border-amber-400/20 flex items-center justify-between text-[10px] text-emerald-300 font-extrabold uppercase tracking-wider relative z-10">
+            <div className="mt-2 pt-1.5 border-t border-amber-300/60 flex items-center justify-between text-[10px] text-emerald-700 font-extrabold uppercase tracking-wider relative z-10">
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                 Gate Verified Check-In
               </span>
-              <span className="font-mono opacity-90">
+              <span className="font-mono text-emerald-800 opacity-90">
                 {registration.checkedInAt ? new Date(registration.checkedInAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'Verified'}
               </span>
             </div>
